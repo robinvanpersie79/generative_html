@@ -1,7 +1,18 @@
 class HTMLProperties:
+    @property
+    def special_tokens(self):
+        return self.SPECIAL_TOKENS
+
+    @property
+    def html_tags(self):
+        return self.HTML_TAGS
 
     SPECIAL_TOKENS = [
-        '[UNK]', '[CLS]', '[SEP]', '[PAD]', '[MASK]',
+        '[UNK]',
+        '[CLS]',
+        '[SEP]',
+        '[PAD]',
+        '[MASK]',
         ' ---scss-start--- ',
         ' ---scss-end--- ',
         ' ---css-start--- ',
@@ -14,24 +25,123 @@ class HTMLProperties:
         ' ---js-end--- ',
     ]
 
-    @property
-    def special_tokens(self):
-        return self.SPECIAL_TOKENS
-
-    @property
-    def html_tags(self):
-
-        from urllib.request import urlopen
-
-        # import json
-        import json
-        # store the URL in url as
-        # parameter for urlopen
-        url = 'https://raw.githubusercontent.com/sindresorhus/html-tags/main/html-tags.json'
-
-        # store the response of URL
-        response = urlopen(url)
-
-        # storing the JSON response
-        # from url in data
-        return json.loads(response.read())
+    HTML_TAGS = [
+        'a',
+        'abbr',
+        'address',
+        'area',
+        'article',
+        'aside',
+        'audio',
+        'b',
+        'base',
+        'bdi',
+        'bdo',
+        'blockquote',
+        'body',
+        'br',
+        'button',
+        'canvas',
+        'caption',
+        'cite',
+        'code',
+        'col',
+        'colgroup',
+        'data',
+        'datalist',
+        'dd',
+        'del',
+        'details',
+        'dfn',
+        'dialog',
+        'div',
+        'dl',
+        'dt',
+        'em',
+        'embed',
+        'fieldset',
+        'figcaption',
+        'figure',
+        'footer',
+        'form',
+        'h1',
+        'h2',
+        'h3',
+        'h4',
+        'h5',
+        'h6',
+        'head',
+        'header',
+        'hgroup',
+        'hr',
+        'html',
+        'i',
+        'iframe',
+        'img',
+        'input',
+        'ins',
+        'kbd',
+        'label',
+        'legend',
+        'li',
+        'link',
+        'main',
+        'map',
+        'mark',
+        'math',
+        'menu',
+        'menuitem',
+        'meta',
+        'meter',
+        'nav',
+        'noscript',
+        'object',
+        'ol',
+        'optgroup',
+        'option',
+        'output',
+        'p',
+        'param',
+        'picture',
+        'pre',
+        'progress',
+        'q',
+        'rb',
+        'rp',
+        'rt',
+        'rtc',
+        'ruby',
+        's',
+        'samp',
+        'script',
+        'search',
+        'section',
+        'select',
+        'slot',
+        'small',
+        'source',
+        'span',
+        'strong',
+        'style',
+        'sub',
+        'summary',
+        'sup',
+        'svg',
+        'table',
+        'tbody',
+        'td',
+        'template',
+        'textarea',
+        'tfoot',
+        'th',
+        'thead',
+        'time',
+        'title',
+        'tr',
+        'track',
+        'u',
+        'ul',
+        'var',
+        'video',
+        'wbr',
+    ]
